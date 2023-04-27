@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
+
+/* || RESET */
+*, 
+*::after, 
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+  --FF: 'Bruno Ace SC', cursive;
+  --FS: clamp(1rem, 2.2vh, 1.5rem);
+
+  /* STANDARD PADDING */
+  --PADDING-TB: 0.25em; /*TB-TOPBOTTOM*/
+  --PADDING-SIDE: 2.5%;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input, button, textarea{
+    font: inherit;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background-color:black;
+  background-image:
+  radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 10px),
+  radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 5px),
+  radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 10px),
+  radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 5px);
+  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+}
+
+.header__h1 {
+  font-family: var(--FF);
+  letter-spacing: .1em;
+  text-align: center;
+  padding: var(--PADDING-TB) var(--PADDING-SIDE);
+}
+
+.header__clip {
+  background-color: #f3ec78;
+  background-image: linear-gradient(-180deg, #5395ff, #af7342);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 90%;
+}
+
+.main__container {
+  position: relative;
+  background-color: transparent;
+  width: 45em;
+  height: 40em;
+}
+
+.sun {
+  position: absolute;
+  background-color: transparent;
+  height: 50px;
+  width: 50px;
+  font-size: 50px;
+  left: 50%;
+  top: 50%;
+  margin-left: -25px;
+  margin-top: -25px;
+  z-index: 0;
+}
+
+.earth{
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  font-size: 25px;
+  left: 50%;
+  top: 50%;
+  margin-left: -12.5px;
+  margin-top: -12.5px;
+  z-index: 1;
+  animation: moveEarth 6s linear infinite;
+}
+
+.main__button {
+  align-items: center;
+  background-image: linear-gradient(-180deg, #5395ff, #af7342); /*linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);*/
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #fff;
+  display: flex;
+  font-family: var(--FF);
+  font-size: 1em;
+  font-weight: bolder;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 50%;
+  min-width: 30%;
+  margin-top: 3rem;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+
+.main__button:active,
+.main__button:hover {
+  outline: 0;
+}
+
+.main__button span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.main__button:hover span {
+  background: none;
+}
+
+
+@keyframes moveEarth {
+  from {
+    transform: rotate(0deg) translate(120px);
+  }
+
+  to {
+    transform: rotate(360deg) translate(120px);
+  }
+}
+
+@media (min-width: 768px) {
+  .main__button {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
