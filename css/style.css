@@ -71,41 +71,7 @@ body {
   height: 90%;
 }
 
-.main__container {
-  position: relative;
-  background-color: transparent;
-  width: 45em;
-  height: 40em;
-}
-
-.sun {
-  position: absolute;
-  background-color: transparent;
-  height: 50px;
-  width: 50px;
-  font-size: 50px;
-  left: 50%;
-  top: 50%;
-  margin-left: -25px;
-  margin-top: -25px;
-  z-index: 0;
-}
-
-.earth{
-  position: absolute;
-  height: 25px;
-  width: 25px;
-  font-size: 25px;
-  left: 50%;
-  top: 50%;
-  margin-left: -12.5px;
-  margin-top: -12.5px;
-  z-index: 1;
-  animation: moveEarth 6s linear infinite;
-}
-
 .main__button {
-  align-items: center;
   background-image: linear-gradient(-180deg, #5395ff, #af7342); /*linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);*/
   border: 0;
   border-radius: 8px;
@@ -126,7 +92,7 @@ body {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  white-space: nowrap;
+  white-space: normal;
   cursor: pointer;
 }
 
@@ -138,7 +104,8 @@ body {
 
 .main__button span {
   background-color: rgb(5, 6, 45);
-  padding: 16px 24px;
+  align-self: center;
+  padding: 15px 15px;
   border-radius: 6px;
   width: 100%;
   height: 100%;
@@ -150,7 +117,153 @@ body {
 }
 
 
-@keyframes moveEarth {
+.main__container {
+  position: relative;
+  background-color: transparent;
+  width: 100%;
+  height: 40em;
+  overflow: hidden;
+}
+
+.sun__container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  height: 70px;
+  width: 70px;
+  font-size: 70px;
+  left: 50%;
+  top: 50%;
+  margin-left: -35px;
+  margin-top: -35px;
+  z-index: 0;
+}
+
+.earthmoon__container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  width: 25px;
+  font-size: 25px;
+  left: 50%;
+  top: 50%;
+  margin-left: -12.5px;
+  margin-top: -12.5px;
+  z-index: 1;
+  animation: moveEarthMoon 10.5s linear infinite;
+}
+
+
+.earth{
+  position: absolute;
+  z-index: 2;
+}
+
+.moon{
+  position: absolute;
+  z-index: 3;
+  font-size: 5px;
+  animation: moveMoon 2.7s linear infinite;
+}
+
+
+.jupiter__container{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  font-size: 40px;
+  left: 50%;
+  top: 50%;
+  margin-left: -20px;
+  margin-top: -20px;
+  z-index: 1;
+  animation: moveJupiter 20s linear infinite;
+}
+
+.comet1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10px;
+  width: 10px;
+  font-size: 10px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  animation: moveComet 11s linear infinite;
+  animation-delay: 4s;
+}
+
+.comet2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10px;
+  width: 10px;
+  font-size: 10px;
+  position: absolute;
+  top: 0px;
+  right: 250px;
+  animation: moveComet 10s linear infinite;
+  animation-delay: 5s;
+}
+
+.comet3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10px;
+  width: 10px;
+  font-size: 10px;
+  position: absolute;
+  top: 0px;
+  right: 500px;
+  animation: moveComet 12s linear infinite;
+  animation-delay: 9s;
+}
+
+.comet4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10px;
+  width: 10px;
+  font-size: 10px;
+  position: absolute;
+  top: 0px;
+  right: 750px;
+  animation: moveComet 13s linear infinite;
+  animation-delay: 2s;
+}
+
+.comet5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10px;
+  width: 10px;
+  font-size: 10px;
+  position: absolute;
+  top: 0px;
+  right: 1000px;
+  animation: moveComet 9s linear infinite;
+  animation-delay: 0s;
+}
+
+@keyframes moveComet {
+  to {
+    transform: translate(-3000px, 3000px);
+  }
+}
+
+@keyframes moveEarthMoon {
   from {
     transform: rotate(0deg) translate(120px);
   }
@@ -159,6 +272,27 @@ body {
     transform: rotate(360deg) translate(120px);
   }
 }
+
+@keyframes moveMoon {
+  from {
+    transform: rotate(0deg) translate(20px);
+  }
+
+  to {
+    transform: rotate(360deg) translate(20px);
+  }
+}
+
+@keyframes moveJupiter {
+  from {
+    transform: rotate(0deg) translate(200px);
+  }
+
+  to {
+    transform: rotate(360deg) translate(200px);
+  }
+}
+
 
 @media (min-width: 768px) {
   .main__button {
